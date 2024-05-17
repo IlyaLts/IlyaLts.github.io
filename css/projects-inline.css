@@ -1,0 +1,251 @@
+/* Inline Project Styles - Modern Redesign */
+
+/* 1. Reset & Base */
+.portfolio-projects article {
+    width: 100%;
+    float: none;
+    height: auto;
+    padding: 0;
+    margin-bottom: 6rem;
+    /* More breathing room */
+    background: #1e1e24;
+    /* Dark Slate/Blue Grey - softer than black */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    /* Softer, larger shadow */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Subtle border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-projects article:last-child {
+    margin-bottom: 1.5rem;
+}
+
+.portfolio-projects article:hover {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Hide old stuff */
+.post-thumbnail,
+.project-archive-content {
+    display: none !important;
+}
+
+/* Main Content Container */
+.project-detailed-content {
+    display: flex;
+    /* Flex layout */
+    flex-direction: column;
+    width: 100%;
+}
+
+/* 2. Header */
+.project-detailed-content h2 {
+    font-family: 'Inter', sans-serif;
+    /* Assuming Inter or similar exists, fallback safe */
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 1.5rem 1.5rem 0.5rem;
+    padding: 0 0 1.5rem;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    text-transform: none;
+    text-align: center;
+}
+
+/* 3. Grid Gallery (No Scrolling!) */
+.modal-gallery {
+    display: grid;
+    /* Responsive Grid: Cards min 280px wide */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 2.5rem;
+    background: #18181d;
+    /* Slightly darker inner background */
+}
+
+.modal-gallery.grid-2x2 {
+    grid-template-columns: 1fr 1fr;
+}
+
+.modal-gallery.grid-2x1 {
+    grid-template-columns: 1fr 1fr;
+}
+
+.modal-gallery img,
+.modal-gallery video {
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+    /* Flexible height for different aspect ratios */
+    object-fit: contain;
+    /* Ensure full image visibility */
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+    background: transparent;
+}
+
+.modal-gallery img:hover,
+.modal-gallery video:hover {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+    z-index: 2;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 4. Info Section */
+.modal-info {
+    padding: 2.5rem;
+    background: #1e1e24;
+}
+
+.modal-info p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #a0a0b0;
+    /* Softer text color */
+    margin-bottom: 2rem;
+    max-width: 100%;
+}
+
+/* 5. Tags - Modern Pills */
+.modal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 11px;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.modal-tags .tag {
+    background-color: #e0e0e0;
+    color: #494949;
+    padding: 2px 12px;
+    border-radius: 50px;
+    font-size: 1.0rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
+    margin: 0;
+}
+
+/* 6. Links - Gradient Buttons */
+.modal-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.modal-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #fa5c5c 0%, #d62f2f 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.modal-links a:hover {
+    filter: brightness(1.1);
+}
+
+/* Secondary Link Style (SourceForge, etc) */
+.modal-links a:nth-child(2) {
+    background: linear-gradient(135deg, #3a3a45 0%, #2b2b35 100%);
+}
+
+.modal-links a:nth-child(2):hover {
+    background: linear-gradient(135deg, #454552 0%, #353540 100%);
+}
+
+/* itch.io Specific Icon-Button Style - Must come last to override nth-child defaults */
+.modal-links a.itch-link {
+    background: none !important;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    width: auto;
+    height: auto;
+}
+
+.modal-links a.itch-link:hover {
+    filter: none;
+    background: none !important;
+}
+
+.itch-logo {
+    height: 55px;
+    /* Increased size as requested */
+    width: auto;
+    vertical-align: middle;
+    transition: transform 0.2s ease;
+}
+
+.itch-link:hover .itch-logo {
+    transform: scale(1.1);
+}
+
+.modal-links a.github-link {
+    background: none !important;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    width: auto;
+    height: auto;
+    margin-right: 0.5rem;
+}
+
+.modal-links a.github-link:hover {
+    filter: none;
+    background: none !important;
+}
+
+.github-logo {
+    height: 55px;
+    width: auto;
+    vertical-align: middle;
+    transition: transform 0.2s ease;
+}
+
+.github-link:hover .github-logo {
+    transform: scale(1.1);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .modal-gallery {
+        grid-template-columns: 1fr;
+        /* Stack on mobile */
+        padding: 1.5rem;
+    }
+
+    .modal-gallery img,
+    .modal-gallery video {
+        height: auto;
+        max-height: 300px;
+    }
+
+    .project-detailed-content h2 {
+        font-size: 2rem;
+        padding: 1.5rem;
+    }
+
+    .modal-info {
+        padding: 1.5rem;
+    }
+}
